@@ -3,7 +3,7 @@ ETAPA 1: AUTOENCODER PARA FASHION MNIST
 <<<<<<< HEAD
 
 =======
-Basado EXACTAMENTE en el código del Colab del profesor
+
 >>>>>>> etapa2
 """
 
@@ -44,8 +44,8 @@ data_test = pd.DataFrame(X_test_flat)
 data.insert(0, 'label', y_train)
 data_test.insert(0, 'label', y_test)
 
-print(f"✅ data shape: {data.shape}")
-print(f"✅ data_test shape: {data_test.shape}")
+print(f" data shape: {data.shape}")
+print(f" data_test shape: {data_test.shape}")
 
 # ------------------------------------------------------------
 <<<<<<< HEAD
@@ -60,8 +60,8 @@ X_test = data_test.iloc[:, 1:]
 y = data.iloc[:, 0]
 y_test = data_test.iloc[:, 0]
 
-print(f"✅ X shape: {X.shape}")
-print(f"✅ X_test shape: {X_test.shape}")
+print(f" X shape: {X.shape}")
+print(f" X_test shape: {X_test.shape}")
 
 # ------------------------------------------------------------
 # 3. NORMALIZAR
@@ -157,7 +157,7 @@ autoencoder.compile(
     loss='binary_crossentropy',
     metrics=['mse']
 )
-print("✅ Autoencoder compilado")
+print(" Autoencoder compilado")
 
 # ------------------------------------------------------------
 # 9. ENTRENAR
@@ -175,7 +175,7 @@ history = autoencoder.fit(
     verbose=1
 )
 
-print("✅ Entrenamiento completado!")
+print(" Entrenamiento completado!")
 
 # ------------------------------------------------------------
 # 10. GUARDAR MODELOS
@@ -183,15 +183,15 @@ print("✅ Entrenamiento completado!")
 print("\n10. Guardando modelos...")
 encoder.save('encoder_fashion_mnist.h5')
 autoencoder.save('autoencoder_completo.h5')
-print("✅ Encoder guardado: encoder_fashion_mnist.h5")
-print("✅ Autoencoder guardado: autoencoder_completo.h5")
+print(" Encoder guardado: encoder_fashion_mnist.h5")
+print(" Autoencoder guardado: autoencoder_completo.h5")
 
 # ------------------------------------------------------------
 # 11. GENERAR VECTORES LATENTES
 # ------------------------------------------------------------
 print("\n11. Generando vectores latentes...")
 X_latent = encoder.predict(X, verbose=1)
-print(f"✅ X_latent shape: {X_latent.shape}")
+print(f" X_latent shape: {X_latent.shape}")
 
 # ------------------------------------------------------------
 <<<<<<< HEAD
