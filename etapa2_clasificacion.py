@@ -62,7 +62,7 @@ x = layers.Dense(32, activation='relu', name='clasificador_dense_2')(x)
 clasificador_output = layers.Dense(10, activation='softmax', name='clasificador_output')(x)
 
 clasificador = models.Model(clasificador_input, clasificador_output, name='clasificador')
-clasificador.summary()
+#clasificador.summary()
 
 # ------------------------------------------------------------
 # 4. MODELO COMPLETO
@@ -74,7 +74,7 @@ latent_vector = encoder(modelo_input)
 modelo_output = clasificador(latent_vector)
 
 modelo_final = models.Model(modelo_input, modelo_output, name='fashion_mnist_classifier')
-modelo_final.summary()
+#modelo_final.summary()
 
 # ------------------------------------------------------------
 # 5. COMPILAR
